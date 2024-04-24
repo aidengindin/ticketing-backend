@@ -32,7 +32,7 @@ public class TicketingController {
     }
 
     @PostMapping("/registrations")
-    public Registration postMethodName(@RequestBody Registration registration) {
+    public Registration addRegistration(@RequestBody Registration registration) {
         return registrationRepository.save(registration);
     }
     
