@@ -49,6 +49,11 @@ public class TicketingController {
         return productRepository.findByEventId(eventId);
     }
 
+    @GetMapping("/registrations")
+    public List<Registration> getRegistrationsByEvent(@RequestParam("eventId") int eventId) {
+        return registrationRepository.findbyEventId(eventId);
+    }
+
     @PostMapping("/registrations")
     public Registration addRegistration(@RequestBody Registration registration) {
         return registrationRepository.save(registration);
