@@ -5,6 +5,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 
 @RestController
@@ -27,4 +30,10 @@ public class TicketingController {
     public List<Event> getEvents() {
         return eventRepository.findAll();
     }
+
+    @PostMapping("/registrations")
+    public Registration postMethodName(@RequestBody Registration registration) {
+        return registrationRepository.save(registration);
+    }
+    
 }
